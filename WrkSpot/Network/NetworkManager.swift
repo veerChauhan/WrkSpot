@@ -13,7 +13,6 @@ class NetworkManager {
     public static let shared = NetworkManager()
     private init(){}
     private var task: URLSessionTask?
-    private var queue = DispatchQueue(label: "NetworkQueue",qos: .background,attributes: .concurrent)
 
     
     public func performDataTask<T: Decodable>(_ route: NetworkRoute, completionHandler: @escaping(Result<T, NetworkError>) -> Void) {

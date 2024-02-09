@@ -21,6 +21,8 @@
 		FAF32F3E2B7686920071164B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F3D2B7686920071164B /* NetworkManager.swift */; };
 		FAF32F402B7689E00071164B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F3F2B7689E00071164B /* NetworkError.swift */; };
 		FAF32F442B768C8B0071164B /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F432B768C8B0071164B /* NetworkRoute.swift */; };
+		FAF32F462B768F3F0071164B /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F452B768F3F0071164B /* CountryListViewModel.swift */; };
+		FAF32F482B7691300071164B /* CountryDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F472B7691300071164B /* CountryDetailRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		FAF32F3D2B7686920071164B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAF32F3F2B7689E00071164B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FAF32F432B768C8B0071164B /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
+		FAF32F452B768F3F0071164B /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		FAF32F472B7691300071164B /* CountryDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		FAD1F7AF2B7679A700E8524F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FAF32F452B768F3F0071164B /* CountryListViewModel.swift */,
+				FAF32F472B7691300071164B /* CountryDetailRoute.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				FAD1F7B22B7679A700E8524F /* CountryListViewController.xib */,
-				FAD1F7B32B7679A700E8524F /* Cell */,
 				FAD1F7B42B7679A700E8524F /* CountryListViewController.swift */,
+				FAD1F7B32B7679A700E8524F /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,12 +261,14 @@
 				FAD1F7B92B7679A700E8524F /* CountryListViewController.swift in Sources */,
 				FAF32F442B768C8B0071164B /* NetworkRoute.swift in Sources */,
 				FAF32F402B7689E00071164B /* NetworkError.swift in Sources */,
+				FAF32F462B768F3F0071164B /* CountryListViewModel.swift in Sources */,
 				FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */,
 				FAD1F7B72B7679A700E8524F /* CornerRadius.swift in Sources */,
 				FAD1F7952B7678A400E8524F /* SceneDelegate.swift in Sources */,
 				FAD1F7B62B7679A700E8524F /* NaviagtionBar.swift in Sources */,
 				FAF32F3E2B7686920071164B /* NetworkManager.swift in Sources */,
 				FAD1F7BC2B767D8F00E8524F /* CountryCell.swift in Sources */,
+				FAF32F482B7691300071164B /* CountryDetailRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

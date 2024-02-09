@@ -13,10 +13,13 @@ class CountryListViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var countryListTableView: UITableView!
     @IBOutlet weak var navigationBar: NaviagtionBar!
+    var countryListViewModel: CountryListViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureCountryListScreen()
-        
+        countryListViewModel = CountryListViewModel(delegate: self)
+
     }
     
     
@@ -25,6 +28,7 @@ class CountryListViewController: UIViewController {
         self.navigationBar.startUpdatingDateAndTime()
         self.configureCountryListTableView()
         self.configureSearchView()
+        
     }
     
     private func configureSearchView() {
@@ -59,6 +63,15 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
         return 90
     }
     
+}
+
+extension CountryListViewController: CountryListPresenterProtocol {
+    
+    func didFetchCountryDetails() {
+    }
+    
+    func didFailedFetchingCountryDetail() {
+    }
 }
 
 extension  CountryListViewController: UITextFieldDelegate {
