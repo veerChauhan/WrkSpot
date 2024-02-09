@@ -1,21 +1,98 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CountryCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CountryCell" rowHeight="132" id="KGk-i7-Jjw" customClass="CountryCell" customModule="WrkSpot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RX-vA-upl">
+                        <rect key="frame" x="5" y="5" width="310" height="122"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M45-TS-Ad2">
+                                <rect key="frame" x="150" y="35" width="152" height="52"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="capital: New delhi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iy-1N-UJ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: INR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0s-Gm-Ztp">
+                                        <rect key="frame" x="0.0" y="19" width="152" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Population: 132423423" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-5K-R28">
+                                        <rect key="frame" x="0.0" y="38" width="152" height="14"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hge-Ty-ulr">
+                                <rect key="frame" x="10" y="43.666666666666657" width="60" height="35"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="H2M-ra-BVh"/>
+                                    <constraint firstAttribute="width" constant="60" id="wr1-Nz-WiT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="India" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6l-d5-yjM">
+                                <rect key="frame" x="75" y="51" width="65" height="20"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="M45-TS-Ad2" firstAttribute="leading" secondItem="j6l-d5-yjM" secondAttribute="trailing" constant="10" id="SI0-eI-mMP"/>
+                            <constraint firstItem="j6l-d5-yjM" firstAttribute="leading" secondItem="Hge-Ty-ulr" secondAttribute="trailing" constant="5" id="SsV-v4-f0X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M45-TS-Ad2" secondAttribute="trailing" id="X89-w8-5dk"/>
+                            <constraint firstItem="Hge-Ty-ulr" firstAttribute="centerY" secondItem="4RX-vA-upl" secondAttribute="centerY" id="YBA-MY-nza"/>
+                            <constraint firstItem="M45-TS-Ad2" firstAttribute="centerY" secondItem="Hge-Ty-ulr" secondAttribute="centerY" id="awO-KY-Dnf"/>
+                            <constraint firstItem="j6l-d5-yjM" firstAttribute="centerY" secondItem="Hge-Ty-ulr" secondAttribute="centerY" id="fGD-YL-ACa"/>
+                            <constraint firstItem="Hge-Ty-ulr" firstAttribute="leading" secondItem="4RX-vA-upl" secondAttribute="leading" constant="10" id="iNM-B3-ab5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4RX-vA-upl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="11l-Gy-thR"/>
+                    <constraint firstAttribute="trailing" secondItem="4RX-vA-upl" secondAttribute="trailing" constant="5" id="IKr-eQ-Awq"/>
+                    <constraint firstAttribute="bottom" secondItem="4RX-vA-upl" secondAttribute="bottom" constant="5" id="LAj-Dy-kYp"/>
+                    <constraint firstItem="4RX-vA-upl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TZO-az-1F5"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="PopulationLabel" destination="DCX-5K-R28" id="XrP-a7-NWQ"/>
+                <outlet property="capitalLabel" destination="7iy-1N-UJ8" id="vJk-M5-a4D"/>
+                <outlet property="countryCellContainer" destination="4RX-vA-upl" id="v5W-xD-DJd"/>
+                <outlet property="currencyLabel" destination="K0s-Gm-Ztp" id="x8P-Sp-GgX"/>
+            </connections>
+            <point key="canvasLocation" x="27.480916030534349" y="87.323943661971839"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

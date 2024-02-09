@@ -9,7 +9,6 @@ import Foundation
 
 
 enum CornerRadius {
-    
     case round
     case custom(value: CGFloat)
     

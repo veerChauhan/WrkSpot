@@ -8,11 +8,63 @@
 import UIKit
 
 class CountryListViewController: UIViewController {
-
+    @IBOutlet weak var searchView: UIView!
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var countryListTableView: UITableView!
+    @IBOutlet weak var navigationBar: NaviagtionBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureCountryListScreen()
+        
+    }
+    
+    
+    private func configureCountryListScreen() {
+        self.navigationBar.customizeProfileContainer(cornerRadiusOption: .round)
+        self.navigationBar.startUpdatingDateAndTime()
+        self.configureCountryListTableView()
+        self.configureSearchView()
+    }
+    
+    private func configureSearchView() {
+        self.searchTextField.delegate = self
+        self.searchView.layer.cornerRadius = 5
+        self.searchView.layer.borderColor = UIColor.lightGray.cgColor
+        self.searchView.layer.borderWidth = 1.0
+    }
+    private func configureCountryListTableView() {
+        self.countryListTableView.delegate = self
+        self.countryListTableView.dataSource = self
+        self.countryListTableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
     }
 
+}
+
+extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let countryCell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell else {
+            print("Country cell is not Available, Please check file and Target")
+            return UITableViewCell()
+        }
+        
+        return countryCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+}
+
+extension  CountryListViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.searchTextField.resignFirstResponder() 
+        return true
+    }
 }

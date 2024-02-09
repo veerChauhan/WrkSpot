@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+final class Network {
+    
+    
+    
+}

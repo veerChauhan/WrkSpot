@@ -9,6 +9,12 @@ import UIKit
 
 class CountryCell: UITableViewCell {
 
+    @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var PopulationLabel: UILabel!
+    @IBOutlet weak var capitalLabel: UILabel!
+    
+    
+    @IBOutlet weak var countryCellContainer: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
