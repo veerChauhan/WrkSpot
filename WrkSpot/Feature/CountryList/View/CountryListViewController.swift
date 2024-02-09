@@ -77,13 +77,28 @@ extension CountryListViewController: CountryListPresenterProtocol {
     }
     
     func didFailedFetchingCountryDetail() {
+        debugPrint("Unable to fetch Country List")
     }
+    
+    
 }
 
-extension  CountryListViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+extension CountryListViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        self.searchTextField.resignFirstResponder() 
+        guard let userInput = textField.text else {
+            return true
+        }
+        let  input = userInput.trimmingCharacters(in: .whitespaces)
+        if input.isEmpty { countryListViewModel.loadCountryDetails() }
+        else {countryListViewModel.searchCountryDetail(by: input) }
+
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 }

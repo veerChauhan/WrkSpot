@@ -7,44 +7,51 @@
 
 import Foundation
 
-protocol CountryDetailInteractorProtocol:AnyObject {
-    
+import Foundation
+
+protocol CountryDetailInteractorProtocol: AnyObject {
     func loadCountryDetails()
-    
+    func searchCountryDetail(by countryName: String)
 }
 
 protocol CountryListPresenterProtocol: AnyObject {
-    
     func didFetchCountryDetails()
     func didFailedFetchingCountryDetail()
 }
 
-
 final class CountryListViewModel: CountryDetailInteractorProtocol {
-    
     
     weak var delegate: CountryListPresenterProtocol?
     private let networkManager = NetworkManager.shared
     private var countryDetailRoute = CountryDetailRoute()
 
     private var countryDetailsData: [CountryDetailModel]?
-    
+    private var filteredCountryDetails: [CountryDetailModel]?
+
     var countryDetailsCount: Int {
-           return countryDetailsData?.count ?? 0
+        return filteredCountryDetails?.count ?? 0
     }
 
-    init(delegate: CountryListPresenterProtocol ) {
+    subscript(index: Int) -> CountryDetailModel? {
+        guard let filteredCountryDetails = filteredCountryDetails, index < filteredCountryDetails.count else {
+            return nil
+        }
+        return filteredCountryDetails[index]
+    }
+
+    init(delegate: CountryListPresenterProtocol) {
         self.delegate = delegate
     }
     
-    
     func loadCountryDetails() {
-        
-        networkManager.performDataTask(countryDetailRoute) { (result: Result<[CountryDetailModel], NetworkError>) in
+        networkManager.performDataTask(countryDetailRoute) { [weak self] (result: Result<[CountryDetailModel], NetworkError>) in
+            guard let self = self else { return }
+
             switch result {
             case .success(let countrydetails):
                 print(countrydetails)
                 self.countryDetailsData = countrydetails
+                self.filteredCountryDetails = countrydetails
                 DispatchQueue.main.async {
                     self.delegate?.didFetchCountryDetails()
                 }
@@ -54,12 +61,13 @@ final class CountryListViewModel: CountryDetailInteractorProtocol {
         }
     }
     
-    subscript(index: Int) -> CountryDetailModel? {
-        guard let countryDetailsData = countryDetailsData, index < countryDetailsData.count else {
-            return nil
+    func searchCountryDetail(by countryName: String) {
+        guard let countryDetailsData = countryDetailsData else {
+            return
         }
-        return countryDetailsData[index]
+        
+        let lowercasedSearchTerm = countryName.lowercased()
+        filteredCountryDetails = countryDetailsData.filter { $0.name?.lowercased().contains(lowercasedSearchTerm) == true }
+        delegate?.didFetchCountryDetails()
     }
 }
-
-
