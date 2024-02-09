@@ -9,11 +9,12 @@ import UIKit
 
 class NaviagtionBar: UIView {
     
+    @IBOutlet weak var naviagtionBarContainerView: UIView!
     @IBOutlet weak var todayDateAndTimelabel: UILabel!
     @IBOutlet weak var profileContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
+    //120 40 200
     private var timer: Timer?
     
     override init(frame: CGRect) {
@@ -33,6 +34,13 @@ class NaviagtionBar: UIView {
              addSubview(contentView)
              contentView.frame = bounds
              contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+             self.naviagtionBarContainerView.layer.borderWidth = 2
+             self.naviagtionBarContainerView.layer.borderColor = UIColor(
+                 red: 120/255.0,
+                 green: 40/255.0,
+                 blue: 200/255.0,
+                 alpha: 1.0
+             ).cgColor
          }
      }
     

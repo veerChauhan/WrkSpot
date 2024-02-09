@@ -19,15 +19,22 @@ class CountryCell: UITableViewCell {
     @IBOutlet weak var countryCellContainer: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization codes
+        self.countryCellContainer.layer.cornerRadius = 5
     }
 
-    
+    override func prepareForReuse() {
+        // Removing image to avoid overalpping of image
+        self.countryImageView.image = UIImage(named: "")
+    }
     func configureCoutry(with countryDetail: CountryDetailModel) {
         self.countryNameLabel.text = countryDetail.name ?? ""
         self.capitalLabel.text = countryDetail.capital ?? ""
         self.PopulationLabel.text = "\(countryDetail.population ?? 0)"
         self.currencyLabel.text = countryDetail.currency
+        guard let flag = countryDetail.media?.flag else {return}
+        self.countryImageView.loadRemoteImage(from: flag)
+
     }
     
 }

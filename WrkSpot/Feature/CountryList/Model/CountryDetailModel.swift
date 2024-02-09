@@ -45,8 +45,8 @@ struct Media: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        flag = try container.decodeIfPresent(String.self, forKey: .orthographic) ?? ""
-        emblem = try container.decodeIfPresent(String.self, forKey: .flag) ?? ""
-        orthographic = try container.decodeIfPresent(String.self, forKey: .emblem) ?? ""
+        flag = try container.decodeIfPresent(String.self, forKey: .flag) ?? ""
+        emblem = try container.decodeIfPresent(String.self, forKey: .emblem) ?? ""
+        orthographic = try container.decodeIfPresent(String.self, forKey: .orthographic) ?? ""
     }
 }
