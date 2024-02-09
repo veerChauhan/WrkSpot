@@ -19,6 +19,7 @@ class CountryListViewController: UIViewController {
         super.viewDidLoad()
         self.configureCountryListScreen()
         countryListViewModel = CountryListViewModel(delegate: self)
+        countryListViewModel.loadCountryDetails()
 
     }
     
@@ -48,14 +49,18 @@ class CountryListViewController: UIViewController {
 extension CountryListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return countryListViewModel.countryDetailsCount
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        guard let singleCountryDetail = countryListViewModel[indexPath.row] else {return UITableViewCell()}
+
         guard let countryCell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell else {
             print("Country cell is not Available, Please check file and Target")
             return UITableViewCell()
         }
-        
+        countryCell.configureCoutry(with: singleCountryDetail)
         return countryCell
     }
     
@@ -68,6 +73,7 @@ extension CountryListViewController: UITableViewDelegate, UITableViewDataSource 
 extension CountryListViewController: CountryListPresenterProtocol {
     
     func didFetchCountryDetails() {
+        self.countryListTableView.reloadData()
     }
     
     func didFailedFetchingCountryDetail() {

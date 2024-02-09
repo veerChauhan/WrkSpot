@@ -9,10 +9,12 @@ import UIKit
 
 class CountryCell: UITableViewCell {
 
+    @IBOutlet weak var countryImageView: UIImageView!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var PopulationLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
     
+    @IBOutlet weak var countryNameLabel: UILabel!
     
     @IBOutlet weak var countryCellContainer: UIView!
     override func awakeFromNib() {
@@ -20,10 +22,12 @@ class CountryCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureCoutry(with countryDetail: CountryDetailModel) {
+        self.countryNameLabel.text = countryDetail.name ?? ""
+        self.capitalLabel.text = countryDetail.capital ?? ""
+        self.PopulationLabel.text = "\(countryDetail.population ?? 0)"
+        self.currencyLabel.text = countryDetail.currency
     }
     
 }

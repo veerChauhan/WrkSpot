@@ -23,6 +23,7 @@
 		FAF32F442B768C8B0071164B /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F432B768C8B0071164B /* NetworkRoute.swift */; };
 		FAF32F462B768F3F0071164B /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F452B768F3F0071164B /* CountryListViewModel.swift */; };
 		FAF32F482B7691300071164B /* CountryDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F472B7691300071164B /* CountryDetailRoute.swift */; };
+		FAF32F4A2B76931A0071164B /* CountryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F492B76931A0071164B /* CountryDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FAF32F432B768C8B0071164B /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
 		FAF32F452B768F3F0071164B /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		FAF32F472B7691300071164B /* CountryDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailRoute.swift; sourceTree = "<group>"; };
+		FAF32F492B76931A0071164B /* CountryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		FAD1F7B02B7679A700E8524F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAF32F492B76931A0071164B /* CountryDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */,
 				FAD1F7B72B7679A700E8524F /* CornerRadius.swift in Sources */,
 				FAD1F7952B7678A400E8524F /* SceneDelegate.swift in Sources */,
+				FAF32F4A2B76931A0071164B /* CountryDetailModel.swift in Sources */,
 				FAD1F7B62B7679A700E8524F /* NaviagtionBar.swift in Sources */,
 				FAF32F3E2B7686920071164B /* NetworkManager.swift in Sources */,
 				FAD1F7BC2B767D8F00E8524F /* CountryCell.swift in Sources */,
