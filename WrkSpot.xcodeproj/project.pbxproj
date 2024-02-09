@@ -20,6 +20,7 @@
 		FAD1F7BD2B767D8F00E8524F /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F7BB2B767D8F00E8524F /* CountryCell.xib */; };
 		FAF32F3E2B7686920071164B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F3D2B7686920071164B /* NetworkManager.swift */; };
 		FAF32F402B7689E00071164B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F3F2B7689E00071164B /* NetworkError.swift */; };
+		FAF32F442B768C8B0071164B /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F432B768C8B0071164B /* NetworkRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FAD1F7BB2B767D8F00E8524F /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		FAF32F3D2B7686920071164B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FAF32F3F2B7689E00071164B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FAF32F432B768C8B0071164B /* NetworkRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			children = (
 				FAF32F3D2B7686920071164B /* NetworkManager.swift */,
 				FAF32F3F2B7689E00071164B /* NetworkError.swift */,
+				FAF32F432B768C8B0071164B /* NetworkRoute.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD1F7B92B7679A700E8524F /* CountryListViewController.swift in Sources */,
+				FAF32F442B768C8B0071164B /* NetworkRoute.swift in Sources */,
 				FAF32F402B7689E00071164B /* NetworkError.swift in Sources */,
 				FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */,
 				FAD1F7B72B7679A700E8524F /* CornerRadius.swift in Sources */,

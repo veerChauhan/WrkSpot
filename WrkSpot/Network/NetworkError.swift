@@ -10,6 +10,7 @@ protocol ErrorDescription {
     var errorMessage: String { get }
 }
 public enum NetworkError: Error {
+    case invaildURL
     case networkError
     case urlResponseError
     case decodingError
@@ -22,6 +23,8 @@ public enum NetworkError: Error {
 extension NetworkError: ErrorDescription {
      public var errorMessage: String {
         switch self {
+        case .invaildURL:
+            return "Url is invaild"
         case.decodingError:
             return "Error in decoding Response Data"
         case .dataError:
