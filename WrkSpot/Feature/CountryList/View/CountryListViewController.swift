@@ -24,6 +24,11 @@ class CountryListViewController: UIViewController {
     }
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationBar.invaildateTimer()
+    }
+    
     private func configureCountryListScreen() {
         self.navigationBar.customizeProfileContainer(cornerRadiusOption: .round)
         self.navigationBar.startUpdatingDateAndTime()

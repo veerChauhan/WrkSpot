@@ -28,7 +28,6 @@ class NaviagtionBar: UIView {
      }
      
      private func commonInit() {
-         // Load the XIB file
          let nib = UINib(nibName: "NaviagtionBar", bundle: nil)
          if let contentView = nib.instantiate(withOwner: self, options: nil).first as? UIView {
              addSubview(contentView)
@@ -60,6 +59,10 @@ class NaviagtionBar: UIView {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             self?.updateTodayDateAndTime()
         }
+    }
+    
+    func invaildateTimer() {
+        self.timer?.invalidate()
     }
     
     private func updateTodayDateAndTime() {

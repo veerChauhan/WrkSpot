@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol CountryDetailInteractorProtocol: AnyObject {
     func loadCountryDetails()
     func searchCountryDetail(by countryName: String)
