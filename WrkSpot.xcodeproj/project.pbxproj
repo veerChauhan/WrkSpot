@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7922B7678A400E8524F /* AppDelegate.swift */; };
 		FAD1F7952B7678A400E8524F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7942B7678A400E8524F /* SceneDelegate.swift */; };
-		FAD1F7972B7678A400E8524F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7962B7678A400E8524F /* ViewController.swift */; };
-		FAD1F79A2B7678A400E8524F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F7982B7678A400E8524F /* Main.storyboard */; };
 		FAD1F79C2B7678A500E8524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F79B2B7678A500E8524F /* Assets.xcassets */; };
 		FAD1F79F2B7678A500E8524F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F79D2B7678A500E8524F /* LaunchScreen.storyboard */; };
 		FAD1F7B52B7679A700E8524F /* NaviagtionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F7A82B7679A700E8524F /* NaviagtionBar.xib */; };
@@ -20,14 +18,13 @@
 		FAD1F7B92B7679A700E8524F /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7B42B7679A700E8524F /* CountryListViewController.swift */; };
 		FAD1F7BC2B767D8F00E8524F /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7BA2B767D8F00E8524F /* CountryCell.swift */; };
 		FAD1F7BD2B767D8F00E8524F /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F7BB2B767D8F00E8524F /* CountryCell.xib */; };
+		FAF32F3E2B7686920071164B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF32F3D2B7686920071164B /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAD1F78F2B7678A300E8524F /* WrkSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WrkSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD1F7922B7678A400E8524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD1F7942B7678A400E8524F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAD1F7962B7678A400E8524F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FAD1F7992B7678A400E8524F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAD1F79B2B7678A500E8524F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD1F79E2B7678A500E8524F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD1F7A02B7678A500E8524F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +35,7 @@
 		FAD1F7B42B7679A700E8524F /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		FAD1F7BA2B767D8F00E8524F /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		FAD1F7BB2B767D8F00E8524F /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		FAF32F3D2B7686920071164B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +68,12 @@
 		FAD1F7912B7678A300E8524F /* WrkSpot */ = {
 			isa = PBXGroup;
 			children = (
+				FAF32F3C2B76867D0071164B /* Network */,
 				FAD1F7AA2B7679A700E8524F /* Extensions */,
 				FAD1F7AD2B7679A700E8524F /* Feature */,
 				FAD1F7A62B7679A700E8524F /* SharedUIComponant */,
 				FAD1F7922B7678A400E8524F /* AppDelegate.swift */,
 				FAD1F7942B7678A400E8524F /* SceneDelegate.swift */,
-				FAD1F7962B7678A400E8524F /* ViewController.swift */,
-				FAD1F7982B7678A400E8524F /* Main.storyboard */,
 				FAD1F79B2B7678A500E8524F /* Assets.xcassets */,
 				FAD1F79D2B7678A500E8524F /* LaunchScreen.storyboard */,
 				FAD1F7A02B7678A500E8524F /* Info.plist */,
@@ -168,6 +165,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FAF32F3C2B76867D0071164B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAF32F3D2B7686920071164B /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,7 +235,6 @@
 				FAD1F7B82B7679A700E8524F /* CountryListViewController.xib in Resources */,
 				FAD1F79F2B7678A500E8524F /* LaunchScreen.storyboard in Resources */,
 				FAD1F79C2B7678A500E8524F /* Assets.xcassets in Resources */,
-				FAD1F79A2B7678A400E8524F /* Main.storyboard in Resources */,
 				FAD1F7B52B7679A700E8524F /* NaviagtionBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,12 +246,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD1F7972B7678A400E8524F /* ViewController.swift in Sources */,
 				FAD1F7B92B7679A700E8524F /* CountryListViewController.swift in Sources */,
 				FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */,
 				FAD1F7B72B7679A700E8524F /* CornerRadius.swift in Sources */,
 				FAD1F7952B7678A400E8524F /* SceneDelegate.swift in Sources */,
 				FAD1F7B62B7679A700E8524F /* NaviagtionBar.swift in Sources */,
+				FAF32F3E2B7686920071164B /* Network.swift in Sources */,
 				FAD1F7BC2B767D8F00E8524F /* CountryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,14 +259,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FAD1F7982B7678A400E8524F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FAD1F7992B7678A400E8524F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FAD1F79D2B7678A500E8524F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
