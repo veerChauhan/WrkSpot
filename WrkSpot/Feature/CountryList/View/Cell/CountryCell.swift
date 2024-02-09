@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class CountryCell: UITableViewCell {
 
     @IBOutlet weak var countryImageView: UIImageView!
@@ -29,9 +31,9 @@ class CountryCell: UITableViewCell {
     }
     func configureCoutry(with countryDetail: CountryDetailModel) {
         self.countryNameLabel.text = countryDetail.name ?? ""
-        self.capitalLabel.text = countryDetail.capital ?? ""
-        self.PopulationLabel.text = "\(countryDetail.population ?? 0)"
-        self.currencyLabel.text = countryDetail.currency
+        self.capitalLabel.text = "Capital: \(countryDetail.capital ?? "")"
+        self.PopulationLabel.text = "Population: \(countryDetail.population ?? 0)"
+        self.currencyLabel.text = "Currency: \(countryDetail.currency ?? "")"
         guard let flag = countryDetail.media?.flag else {return}
         self.countryImageView.loadRemoteImage(from: flag)
 
