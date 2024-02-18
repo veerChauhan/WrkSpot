@@ -21,6 +21,7 @@ class CountryViewModel: ObservableObject {
     private let networkManager = NetworkManager.shared
     private var countryDetailRoute = CountryDetailRoute()
 
+    /*
     func loadCountryDetails() {
         isLoading = true
 
@@ -41,7 +42,26 @@ class CountryViewModel: ObservableObject {
             }
         }
     }
+    */
     
+    func  loadCountryDetailsAsync() async {
+        isLoading = true
+
+        do {
+            let countryDetails: [CountryDetailModel] = try await networkManager.performDataTaskPunlisher(countryDetailRoute)
+            isLoading = false
+            print(countryDetails)
+            self.countryDetailsData = countryDetails
+            self.filteredCountryDetails = countryDetails
+            
+        } catch(let error) {
+            // Handle errors
+            isLoading = false
+
+            print(error.localizedDescription)
+            self.isError = true
+        }
+    }
      func filterCountries(searchedText: String?) {
         guard let searchedText = searchedText, !searchedText.isEmpty else {
             filteredCountryDetails = self.countryDetailsData ?? []

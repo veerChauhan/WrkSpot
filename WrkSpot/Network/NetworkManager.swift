@@ -56,6 +56,26 @@ class NetworkManager {
         
     }
     
+    
+
+    public func performDataTaskPunlisher<T: Decodable>(_ route: NetworkRoute) async throws -> T {
+        guard let url = URL(string: route.baseURL + (route.path ?? "")) else {
+            throw NetworkError.invaildURL
+        }
+
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw NetworkError.urlResponseError
+            }
+
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw NetworkError.networkError
+        }
+    }
+
+    
 }
 /*
  Note: For current app implementation we are not considering other HTTP request, also for now we are not considering Header.

@@ -45,7 +45,9 @@ struct CountryListScreen: View {
             }
         }
         .onAppear {
-            viewModel.loadCountryDetails()
+            Task {
+                await viewModel.loadCountryDetailsAsync()
+            }
         }
     }
    
