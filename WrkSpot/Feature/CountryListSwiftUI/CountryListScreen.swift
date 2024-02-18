@@ -24,6 +24,9 @@ struct CountryListScreen: View {
                         .foregroundColor(.white)
                 }
                 SearchBox(searchedText: $searchedText)
+                    .onChange(of: searchedText) { oldValue, newValue in
+                        viewModel.filterCountries(searchedText: newValue)
+                    }
                 
                 ScrollView {
                     if viewModel.isLoading {
@@ -45,6 +48,7 @@ struct CountryListScreen: View {
             viewModel.loadCountryDetails()
         }
     }
+   
 }
 
 

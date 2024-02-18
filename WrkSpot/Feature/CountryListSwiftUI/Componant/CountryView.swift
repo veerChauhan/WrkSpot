@@ -50,7 +50,7 @@ struct CountryView: View {
             }
             .foregroundColor(.white)
         }
-        .background(Color.red)
+        .background(Color.mint)
         .cornerRadius(10.0)
     }
 }

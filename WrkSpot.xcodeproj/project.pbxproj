@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FA73935E2B82786F0019401C /* CountryListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73935D2B82786F0019401C /* CountryListScreen.swift */; };
-		FA7393602B8278EF0019401C /* CountryListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73935F2B8278EF0019401C /* CountryListVM.swift */; };
 		FA7393622B8298BC0019401C /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7393612B8298BC0019401C /* CountryViewModel.swift */; };
 		FA7393652B829B010019401C /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7393642B829B010019401C /* CountryView.swift */; };
 		FA7393672B829E260019401C /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7393662B829E260019401C /* SearchBox.swift */; };
+		FA73936A2B82A0390019401C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7393692B82A0390019401C /* UIColor+Extension.swift */; };
 		FAD1F7932B7678A400E8524F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7922B7678A400E8524F /* AppDelegate.swift */; };
 		FAD1F7952B7678A400E8524F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1F7942B7678A400E8524F /* SceneDelegate.swift */; };
 		FAD1F79C2B7678A500E8524F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD1F79B2B7678A500E8524F /* Assets.xcassets */; };
@@ -34,10 +34,10 @@
 
 /* Begin PBXFileReference section */
 		FA73935D2B82786F0019401C /* CountryListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListScreen.swift; sourceTree = "<group>"; };
-		FA73935F2B8278EF0019401C /* CountryListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVM.swift; sourceTree = "<group>"; };
 		FA7393612B8298BC0019401C /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		FA7393642B829B010019401C /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		FA7393662B829E260019401C /* SearchBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
+		FA7393692B82A0390019401C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FAD1F78F2B7678A300E8524F /* WrkSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WrkSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD1F7922B7678A400E8524F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD1F7942B7678A400E8524F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 			children = (
 				FA7393632B829AF40019401C /* Componant */,
 				FA73935D2B82786F0019401C /* CountryListScreen.swift */,
-				FA73935F2B8278EF0019401C /* CountryListVM.swift */,
 				FA7393612B8298BC0019401C /* CountryViewModel.swift */,
 			);
 			path = CountryListSwiftUI;
@@ -89,6 +88,14 @@
 				FA7393662B829E260019401C /* SearchBox.swift */,
 			);
 			path = Componant;
+			sourceTree = "<group>";
+		};
+		FA7393682B82A0270019401C /* UIColor+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA7393692B82A0390019401C /* UIColor+Extension.swift */,
+			);
+			path = "UIColor+Extension";
 			sourceTree = "<group>";
 		};
 		FAD1F7862B7678A300E8524F = {
@@ -143,6 +150,7 @@
 		FAD1F7AA2B7679A700E8524F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA7393682B82A0270019401C /* UIColor+Extension */,
 				FAF32F4B2B769A370071164B /* ImageView+Extension */,
 				FAD1F7AB2B7679A700E8524F /* Enums */,
 			);
@@ -304,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7393652B829B010019401C /* CountryView.swift in Sources */,
+				FA73936A2B82A0390019401C /* UIColor+Extension.swift in Sources */,
 				FAD1F7B92B7679A700E8524F /* CountryListViewController.swift in Sources */,
 				FA7393622B8298BC0019401C /* CountryViewModel.swift in Sources */,
 				FAF32F4D2B769D280071164B /* UIimageView+Extension.swift in Sources */,
@@ -317,7 +326,6 @@
 				FAF32F4A2B76931A0071164B /* CountryDetailModel.swift in Sources */,
 				FAD1F7B62B7679A700E8524F /* NaviagtionBar.swift in Sources */,
 				FAF32F3E2B7686920071164B /* NetworkManager.swift in Sources */,
-				FA7393602B8278EF0019401C /* CountryListVM.swift in Sources */,
 				FA7393672B829E260019401C /* SearchBox.swift in Sources */,
 				FAD1F7BC2B767D8F00E8524F /* CountryCell.swift in Sources */,
 				FAF32F482B7691300071164B /* CountryDetailRoute.swift in Sources */,

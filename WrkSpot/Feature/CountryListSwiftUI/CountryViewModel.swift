@@ -41,6 +41,17 @@ class CountryViewModel: ObservableObject {
             }
         }
     }
+    
+     func filterCountries(searchedText: String?) {
+        guard let searchedText = searchedText, !searchedText.isEmpty else {
+            filteredCountryDetails = self.countryDetailsData ?? []
+            return
+        }
+
+        filteredCountryDetails = (self.countryDetailsData ?? []).filter { country in
+            country.name?.lowercased().contains(searchedText.lowercased()) == true
+        }
+    }
 }
 
 
