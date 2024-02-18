@@ -33,6 +33,8 @@ struct CountryDetailModel: Codable {
         id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
         media = try container.decodeIfPresent(Media.self, forKey: .media)
     }
+    
+    
 }
 
 struct Media: Codable {
