@@ -68,8 +68,13 @@ class NetworkManager {
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw NetworkError.urlResponseError
             }
+            do {
+                return try JSONDecoder().decode(T.self, from: data)
+            }
+            catch {
+                throw NetworkError.decodingError
+            }
 
-            return try JSONDecoder().decode(T.self, from: data)
         } catch {
             throw NetworkError.networkError
         }

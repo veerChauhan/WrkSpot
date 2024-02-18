@@ -43,8 +43,7 @@ class CountryViewModel: ObservableObject {
         }
     }
     */
-    
-    func  loadCountryDetailsAsync() async {
+    func loadCountryDetailsAsync() async {
         isLoading = true
 
         do {
@@ -53,15 +52,22 @@ class CountryViewModel: ObservableObject {
             print(countryDetails)
             self.countryDetailsData = countryDetails
             self.filteredCountryDetails = countryDetails
-            
-        } catch(let error) {
-            // Handle errors
+        } catch {
             isLoading = false
 
-            print(error.localizedDescription)
-            self.isError = true
+            if let networkError = error as? NetworkError {
+                print("Network Error: \(networkError.errorMessage)")
+                self.errorMessage = networkError.errorMessage
+                self.isError = true
+            } else {
+                // Handle other errors
+                print("Unexpected Error: \(error.localizedDescription)")
+                self.isError = true
+                self.errorMessage = error.localizedDescription
+            }
         }
     }
+
      func filterCountries(searchedText: String?) {
         guard let searchedText = searchedText, !searchedText.isEmpty else {
             filteredCountryDetails = self.countryDetailsData ?? []
